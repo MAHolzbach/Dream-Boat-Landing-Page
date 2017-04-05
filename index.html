@@ -13,8 +13,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="styles.css">
   </head>
 
@@ -45,14 +43,14 @@
 
       <div class="splash">
         <h1>Dream Boat Water Tours</h1>
-        <p class="lead">See Chicago like you've never dreamed</p>
+        <p class="lead">See Chicago like you've never dreamed!</p>
         <div class="row">
           <div class="col-sm-6 col-md-6">
             <div class="thumbnail">
               <div class="caption">
                 <h2>Chicago River</h2>
                 <h4>2 hours/$25</h4>
-                <button type="button" class="btn btn-primary" role="button">Book</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-info">Book</button>
                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#river-info">Info</button>
               </div>
             </div>
@@ -62,7 +60,7 @@
               <div class="caption">
                 <h2>Lake Michigan</h2>
                 <h4>4 hours/$50</h4>
-                <button type="button" class="btn btn-primary" role="button">Book</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-info">Book</button>
                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#lake-info">Info</button>
               </div>
             </div>
@@ -81,7 +79,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Book now!</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-info" data-dismiss="modal">Book</button>
               </div>
             </div>
           </div>
@@ -99,7 +97,56 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Book now!</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-info" data-dismiss="modal" id="bookingButton">Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="booking-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3>Book your tour!</h3>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="select-tour">Select Tour</label>
+                    <select class="form-control" id="select-tour">
+                      <option>River Tour</option>
+                      <option>Lake Tour</option>
+                    </select>
+                  </div>
+                </form>
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label for="datepicker">Date:</label>
+                    <input type="text" id="datepicker" class="datpicker">
+                    <label for="people">People</label>
+                    <select class="form-control" id="people">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                      <option>13</option>
+                      <option>14</option>
+                      <option>15</option>
+                    </select>
+                  </div>
+                </form>
+                <div class="modal-footer" id="bookingFooter">
+                  <button type="button" class="btn btn-danger btn-large btn-block cancelButton" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary btn-lg btn-block bookItButton">Bon Voyage!</button>
+                </div>
               </div>
             </div>
           </div>
@@ -124,12 +171,10 @@
           </div>
         </div>
 
-
     </div><!-- /.container -->
 
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
   </body>
